@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
-  <title>Kullanıcı Verisi Silme — SocialNet</title>
+  <title>Veri Silme / Data Deletion — SosyalNet</title>
   <style>
     :root { --fg:#1f2937; --muted:#6b7280; --line:#e5e7eb; --brand:#2563eb; }
     * { box-sizing: border-box; }
@@ -13,69 +13,194 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.7;
     }
-    .wrap { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 32px 16px 80px; }
     header { border-bottom: 1px solid var(--line); padding-bottom: 24px; margin-bottom: 32px; }
     h1 { font-size: 26px; margin: 0 0 8px; }
     h2 { font-size: 18px; margin: 32px 0 10px; }
     p, li { color: var(--fg); }
     .muted { color: var(--muted); font-size: 14px; }
-    a { color: var(--brand); }
+    a { color: var(--brand); overflow-wrap: anywhere; }
     ol, ul { padding-left: 22px; }
     li { margin: 6px 0; }
     .note { background:#eff6ff; border:1px solid #bfdbfe; border-radius:10px; padding:12px 16px; margin:16px 0; font-size:14px; }
     footer { margin-top: 44px; padding-top: 24px; border-top: 1px solid var(--line); }
+    .lang-switch { display:flex; justify-content:flex-end; gap:4px; margin-bottom:16px; }
+    .lang-switch button {
+      font: inherit; font-size: 13px; font-weight: 600; cursor: pointer;
+      border: 1px solid var(--line); background: #fff; color: var(--muted);
+      padding: 4px 12px; border-radius: 999px;
+    }
+    .lang-switch button[aria-pressed="true"] { background: var(--brand); border-color: var(--brand); color: #fff; }
+    /* JS yoksa iki dil de görünür; JS seçili olmayanı gizler. */
+    html.lang-tr section[lang="en"], html.lang-en section[lang="tr"] { display: none; }
   </style>
+  <script>
+    (function () {
+      var q = new URLSearchParams(location.search).get('lang') || (location.hash === '#en' ? 'en' : location.hash === '#tr' ? 'tr' : '');
+      var lang = q === 'en' || q === 'tr' ? q : ((navigator.language || '').toLowerCase().indexOf('tr') === 0 ? 'tr' : 'en');
+      document.documentElement.className = 'lang-' + lang;
+      document.documentElement.lang = lang;
+    })();
+  </script>
 </head>
 <body>
   <div class="wrap">
-    <header>
-      <h1>Kullanıcı Verisi Silme Talimatları</h1>
-      <p class="muted">SocialNet — Sosyal Medya Yönetim Platformu · Kobizon</p>
-      <p class="muted">Son güncelleme: 30 Haziran 2026</p>
-    </header>
+    <nav class="lang-switch" aria-label="Dil / Language">
+      <button type="button" data-lang="tr">TR</button>
+      <button type="button" data-lang="en">EN</button>
+    </nav>
 
-    <p>
-      SocialNet, kullanıcıların hesaplarını ve kişisel verilerini (bağlı sosyal medya
-      erişim belirteçleri dâhil) silme hakkına saygı duyar. Verilerinizi aşağıdaki
-      yöntemlerle silebilirsiniz.
-    </p>
+    <!-- ============================== TÜRKÇE ============================== -->
+    <section lang="tr">
+      <header>
+        <h1>Kullanıcı Verisi Silme Talimatları</h1>
+        <p class="muted">SosyalNet — Sosyal Medya Yönetim Platformu · Kobizon</p>
+        <p class="muted">Son güncelleme: 30 Eylül 2026</p>
+      </header>
 
-    <h2>1. Belirli bir sosyal medya hesabının verisini silme</h2>
-    <ol>
-      <li>SocialNet'e giriş yapın.</li>
-      <li><strong>Hesap Bağla</strong> ekranına gidin.</li>
-      <li>Silmek istediğiniz hesabın (Facebook, Instagram, X veya LinkedIn) yanındaki
-        <strong>Bağlantıyı Kaldır</strong> seçeneğini kullanın.</li>
-      <li>O hesaba ait erişim belirteçleri ve yetkiler sistemimizden <strong>anında</strong> silinir.</li>
-    </ol>
-
-    <h2>2. Tüm hesabınızı ve verilerinizi kalıcı olarak silme</h2>
-    <p>
-      Hesabınızın tamamının ve ilişkili tüm kişisel verilerinizin kalıcı olarak silinmesini
-      istiyorsanız, kayıtlı e-posta adresinizden aşağıdaki adrese bir talep gönderin:
-    </p>
-    <div class="note">
-      📧 <strong><a href="mailto:yazilim@kobizon.com.tr?subject=Veri%20Silme%20Talebi">yazilim@kobizon.com.tr</a></strong><br />
-      Konu: <strong>Veri Silme Talebi</strong>
-    </div>
-    <p>
-      Talebiniz en geç <strong>30 gün</strong> içinde sonuçlandırılır; verileriniz kalıcı olarak
-      silinir ve işlem tamamlandığında size bir onay e-postası gönderilir.
-    </p>
-
-    <h2>Facebook / Instagram üzerinden uygulama iznini kaldırma</h2>
-    <p>
-      Dilerseniz Facebook hesabınızdan <em>Ayarlar → Uygulamalar ve Web Siteleri</em> bölümüne
-      giderek SocialNet uygulamasının erişimini doğrudan da kaldırabilirsiniz. Bu durumda da
-      ilgili erişim belirteçleri geçersiz kılınır.
-    </p>
-
-    <footer>
-      <p class="muted">
-        Daha fazla bilgi için <a href="privacy.html">Gizlilik Politikamızı</a> inceleyebilirsiniz.
+      <p>
+        SosyalNet, kullanıcıların hesaplarını ve kişisel verilerini silme hakkına saygı duyar. Bu veriler;
+        bağlı sosyal medya hesaplarının erişim belirteçlerini, gönderileri, analitiği, Gelen Kutusu'ndaki
+        mesajları ve mesaj eklerini, yorumları ve bahsedilmeleri ve yüklediğiniz dosyaları kapsar.
+        Verilerinizi aşağıdaki yöntemlerle silebilirsiniz.
       </p>
-      <p class="muted">© 2026 Kobizon — SocialNet. Tüm hakları saklıdır.</p>
-    </footer>
+
+      <h2>1. Bir sosyal medya hesabının bağlantısını kaldırma</h2>
+      <ol>
+        <li>SosyalNet'e giriş yapın.</li>
+        <li><strong>Hesap Bağla</strong> ekranına gidin.</li>
+        <li>Hesabın (Facebook, Instagram, X veya LinkedIn) yanındaki <strong>Bağlantıyı kaldır</strong> seçeneğini kullanın.</li>
+        <li>O hesabın erişim belirteçleri <strong>anında</strong> silinir; hesaptan artık yeni gönderi, analitik,
+          mesaj veya yorum alınmaz.</li>
+      </ol>
+      <p class="muted">Bağlantı kaldırıldığında daha önce alınmış içerik (gönderi geçmişi, mesajlar, yorumlar) kurum/müşteri
+        kaydınızda kalır. Bunları da silmek için 2. veya 3. adımı kullanın.</p>
+
+      <h2>2. Bir kurum/müşterinin tüm verisini silme</h2>
+      <ol>
+        <li><strong>Kurum / Müşteri</strong> ekranına gidin.</li>
+        <li>Silmek istediğiniz müşterinin yanındaki <strong>Sil</strong> seçeneğini kullanın ve müşteri adını yazarak onaylayın.</li>
+        <li>O müşterinin bağlı hesapları, gönderileri, analitiği, reklam kayıtları, raporları, <strong>mesajları ve mesaj ekleri</strong>,
+          <strong>yorumları</strong>, hazır yanıtları ve dosyaları <strong>kalıcı olarak</strong> silinir.</li>
+      </ol>
+
+      <h2>3. Tüm hesabınızı ve verilerinizi kalıcı olarak silme</h2>
+      <p>Kayıtlı e-posta adresinizden aşağıdaki adrese bir talep gönderin:</p>
+      <div class="note">
+        📧 <strong><a href="mailto:yazilim@kobizon.com.tr?subject=Veri%20Silme%20Talebi">yazilim@kobizon.com.tr</a></strong><br />
+        Konu: <strong>Veri Silme Talebi</strong>
+      </div>
+      <p>
+        Talebiniz en geç <strong>30 gün</strong> içinde sonuçlandırılır; hesabınız ve yukarıda sayılan tüm verileriniz
+        kalıcı olarak silinir ve işlem tamamlandığında size bir onay e-postası gönderilir.
+      </p>
+
+      <h2>4. Facebook / Instagram üzerinden uygulama iznini kaldırma</h2>
+      <p>
+        Facebook'ta <em>Ayarlar ve Gizlilik → Ayarlar → Uygulamalar ve Web Siteleri</em> bölümünden, Instagram'da
+        <em>Ayarlar → Web sitesi izinleri → Uygulamalar ve web siteleri</em> bölümünden SosyalNet'in erişimini
+        kaldırabilirsiniz. Bu durumda erişim belirteçleri geçersiz olur ve hesabınızdan yeni veri alınamaz.
+        Önceden alınmış verilerin silinmesi için 3. adımdaki talebi gönderin.
+      </p>
+
+      <h2>Size mesaj gönderen veya yorum yapan kişiler</h2>
+      <p>
+        Bir SosyalNet kullanıcısının işletme hesabına mesaj gönderdiyseniz veya yorum yaptıysanız ve bu verilerin
+        silinmesini istiyorsanız, ilgili işletmeye veya doğrudan
+        <a href="mailto:yazilim@kobizon.com.tr?subject=Veri%20Silme%20Talebi">yazilim@kobizon.com.tr</a> adresine başvurabilirsiniz.
+      </p>
+
+      <footer>
+        <p class="muted">Daha fazla bilgi için <a href="privacy.html?lang=tr">Gizlilik Politikamızı</a> inceleyebilirsiniz.</p>
+        <p class="muted">© 2026 Kobizon — SosyalNet. Tüm hakları saklıdır.</p>
+      </footer>
+    </section>
+
+    <!-- ============================== ENGLISH ============================== -->
+    <section lang="en">
+      <header>
+        <h1>User Data Deletion Instructions</h1>
+        <p class="muted">SosyalNet — Social Media Management Platform · Kobizon</p>
+        <p class="muted">Last updated: September 30, 2026</p>
+      </header>
+
+      <p>
+        SosyalNet respects your right to delete your account and personal data. This includes access tokens of connected
+        social media accounts, posts, analytics, Inbox messages and message attachments, comments and mentions, and files
+        you uploaded. You can delete your data in the following ways.
+      </p>
+
+      <h2>1. Disconnect a social media account</h2>
+      <ol>
+        <li>Sign in to SosyalNet.</li>
+        <li>Go to the <strong>Connect Account</strong> screen.</li>
+        <li>Choose <strong>Remove connection</strong> next to the account (Facebook, Instagram, X or LinkedIn).</li>
+        <li>That account's access tokens are deleted <strong>immediately</strong>; no new posts, analytics, messages or comments
+          are retrieved from it.</li>
+      </ol>
+      <p class="muted">Content retrieved before disconnecting (post history, messages, comments) stays in your organization/client
+        record. Use step 2 or 3 to delete it as well.</p>
+
+      <h2>2. Delete all data of an organization/client</h2>
+      <ol>
+        <li>Go to the <strong>Clients / Workspaces</strong> screen.</li>
+        <li>Choose <strong>Delete</strong> next to the client and confirm by typing the client's name.</li>
+        <li>That client's connected accounts, posts, analytics, ad records, reports, <strong>messages and message attachments</strong>,
+          <strong>comments</strong>, saved replies and files are <strong>permanently</strong> deleted.</li>
+      </ol>
+
+      <h2>3. Permanently delete your whole account and data</h2>
+      <p>Send a request from your registered email address to:</p>
+      <div class="note">
+        📧 <strong><a href="mailto:yazilim@kobizon.com.tr?subject=Data%20Deletion%20Request">yazilim@kobizon.com.tr</a></strong><br />
+        Subject: <strong>Data Deletion Request</strong>
+      </div>
+      <p>
+        Your request is completed within <strong>30 days</strong>; your account and all data listed above are permanently deleted,
+        and you receive a confirmation email when it is done.
+      </p>
+
+      <h2>4. Remove the app's access from Facebook / Instagram</h2>
+      <p>
+        On Facebook go to <em>Settings &amp; privacy → Settings → Apps and websites</em>; on Instagram go to
+        <em>Settings → Website permissions → Apps and websites</em>, and remove SosyalNet. Its access tokens then become invalid and
+        no new data can be retrieved from your account. To delete data retrieved earlier, send the request in step 3.
+      </p>
+
+      <h2>People who message or comment</h2>
+      <p>
+        If you sent a message to, or commented on, a business account managed with SosyalNet and want that data deleted, contact
+        that business or email us directly at
+        <a href="mailto:yazilim@kobizon.com.tr?subject=Data%20Deletion%20Request">yazilim@kobizon.com.tr</a>.
+      </p>
+
+      <footer>
+        <p class="muted">For more information see our <a href="privacy.html?lang=en">Privacy Policy</a>.</p>
+        <p class="muted">© 2026 Kobizon — SosyalNet. All rights reserved.</p>
+      </footer>
+    </section>
   </div>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var buttons = document.querySelectorAll('.lang-switch button');
+      function apply(lang) {
+        root.className = 'lang-' + lang;
+        root.lang = lang;
+        for (var i = 0; i < buttons.length; i++) {
+          buttons[i].setAttribute('aria-pressed', String(buttons[i].getAttribute('data-lang') === lang));
+        }
+      }
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', function () {
+          var lang = this.getAttribute('data-lang');
+          apply(lang);
+          try { history.replaceState(null, '', '?lang=' + lang); } catch (e) { /* yok say */ }
+        });
+      }
+      apply(root.className === 'lang-en' ? 'en' : 'tr');
+    })();
+  </script>
 </body>
 </html>

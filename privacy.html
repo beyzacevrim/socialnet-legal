@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
-  <title>Gizlilik Politikası — SocialNet</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gizlilik Politikası / Privacy Policy — SosyalNet</title>
+  <meta name="description" content="SosyalNet Gizlilik Politikası / Privacy Policy — Kobizon" />
   <style>
     :root { --fg:#1f2937; --muted:#6b7280; --line:#e5e7eb; --brand:#2563eb; }
     * { box-sizing: border-box; }
@@ -13,157 +13,417 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.7;
     }
-    .wrap { max-width: 820px; margin: 0 auto; padding: 48px 24px 80px; }
+    .wrap { max-width: 820px; margin: 0 auto; padding: 32px 16px 80px; }
     header { border-bottom: 1px solid var(--line); padding-bottom: 24px; margin-bottom: 32px; }
     h1 { font-size: 28px; margin: 0 0 8px; }
     h2 { font-size: 20px; margin: 36px 0 12px; }
     h3 { font-size: 16px; margin: 24px 0 8px; }
     p, li { color: var(--fg); }
     .muted { color: var(--muted); font-size: 14px; }
-    a { color: var(--brand); }
+    a { color: var(--brand); overflow-wrap: anywhere; }
     ul { padding-left: 22px; }
     code { background:#eef2ff; padding:1px 6px; border-radius:6px; font-size:90%; }
+    .table-scroll { overflow-x: auto; }
     table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 14px; }
     th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
     th { background: #f3f4f6; }
     .note { background:#eff6ff; border:1px solid #bfdbfe; border-radius:10px; padding:12px 16px; margin:16px 0; font-size:14px; }
     footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); }
+    .lang-switch { display:flex; justify-content:flex-end; gap:4px; margin-bottom:16px; }
+    .lang-switch button {
+      font: inherit; font-size: 13px; font-weight: 600; cursor: pointer;
+      border: 1px solid var(--line); background: #fff; color: var(--muted);
+      padding: 4px 12px; border-radius: 999px;
+    }
+    .lang-switch button[aria-pressed="true"] { background: var(--brand); border-color: var(--brand); color: #fff; }
+    /* JS yoksa iki dil de görünür; JS seçili olmayanı gizler. */
+    html.lang-tr section[lang="en"], html.lang-en section[lang="tr"] { display: none; }
   </style>
+  <script>
+    (function () {
+      var q = new URLSearchParams(location.search).get('lang') || (location.hash === '#en' ? 'en' : location.hash === '#tr' ? 'tr' : '');
+      var lang = q === 'en' || q === 'tr' ? q : ((navigator.language || '').toLowerCase().indexOf('tr') === 0 ? 'tr' : 'en');
+      document.documentElement.className = 'lang-' + lang;
+      document.documentElement.lang = lang;
+    })();
+  </script>
 </head>
 <body>
   <div class="wrap">
-    <header>
-      <h1>Gizlilik Politikası</h1>
-      <p class="muted">SocialNet — Sosyal Medya Yönetim Platformu</p>
-      <p class="muted">Son güncelleme: 30 Haziran 2026</p>
-    </header>
+    <nav class="lang-switch" aria-label="Dil / Language">
+      <button type="button" data-lang="tr">TR</button>
+      <button type="button" data-lang="en">EN</button>
+    </nav>
 
-    <p>
-      Bu Gizlilik Politikası, <strong>Kobizon</strong> (“biz”, “Şirket”) tarafından işletilen
-      <strong>SocialNet</strong> uygulaması ve web sitesi (“Hizmet”) aracılığıyla toplanan kişisel
-      verilerin nasıl toplandığını, kullanıldığını, saklandığını ve korunduğunu açıklar. Hizmeti
-      kullanarak bu politikada açıklanan uygulamaları kabul etmiş olursunuz.
-    </p>
+    <!-- ============================== TÜRKÇE ============================== -->
+    <section lang="tr">
+      <header>
+        <h1>Gizlilik Politikası</h1>
+        <p class="muted">SosyalNet — Sosyal Medya Yönetim Platformu</p>
+        <p class="muted">Son güncelleme: 30 Eylül 2026</p>
+      </header>
 
-    <h2>1. Topladığımız Veriler</h2>
-
-    <h3>1.1 Hesap Bilgileri</h3>
-    <ul>
-      <li>Ad / kullanıcı adı</li>
-      <li>E-posta adresi</li>
-      <li>Google ile giriş yaptığınızda Google'ın paylaştığı temel profil bilgileri (ad, e-posta)</li>
-    </ul>
-
-    <h3>1.2 Sosyal Medya Profil Bilgileri ve Erişim Yetkileri</h3>
-    <p>
-      Hizmet, sosyal medya hesaplarınızı (Facebook Sayfaları, Instagram işletme hesapları, X/Twitter,
-      LinkedIn) bağlamanıza olanak tanır. Bu bağlantı sırasında, ilgili platformların yetkilendirme
-      (OAuth) akışıyla aşağıdaki bilgiler işlenir:
-    </p>
-    <ul>
-      <li>Bağlı hesabın adı, kimliği (ID), profil fotoğrafı ve genel profil bilgileri</li>
-      <li>Sizin adınıza içerik yayınlamak, gönderileri listelemek, analitik (erişim, etkileşim, takipçi)
-        verilerini okumak ve reklam (öne çıkarma) oluşturmak için <strong>erişim belirteçleri (access token)</strong></li>
-      <li>Bağlı hesaplarda yayımladığınız veya yayımlanmış gönderiler ve bunların performans metrikleri</li>
-    </ul>
-    <div class="note">
-      Erişim belirteçleri (token'lar), veritabanımızda <strong>AES-256-GCM</strong> ile
-      <strong>şifrelenerek</strong> saklanır ve yalnızca sizin talep ettiğiniz işlemleri (yayınlama,
-      analitik, reklam) gerçekleştirmek için kullanılır.
-    </div>
-
-    <h3>1.3 İçerik Verileri</h3>
-    <ul>
-      <li>Oluşturduğunuz gönderi metinleri, görseller, videolar ve hashtag'ler</li>
-      <li>Yapay zekâ ile üretmeyi seçtiğiniz içerik istemleri (prompt) ve çıktıları</li>
-    </ul>
-
-    <h3>1.4 Teknik Veriler</h3>
-    <ul>
-      <li>Oturum/kimlik doğrulama bilgileri, IP adresi, temel günlük (log) kayıtları</li>
-    </ul>
-
-    <h2>2. Verileri Nasıl Kullanıyoruz</h2>
-    <ul>
-      <li>Hesabınızı oluşturmak ve kimliğinizi doğrulamak</li>
-      <li>Bağladığınız sosyal medya hesaplarına gönderi yayınlamak ve zamanlamak</li>
-      <li>Bağlı hesaplarınızın analitik (erişim, etkileşim, takipçi) verilerini getirip raporlamak</li>
-      <li>Talebiniz üzerine yayınlanmış gönderileri reklama dönüştürmek (öne çıkarma)</li>
-      <li>Hizmeti işletmek, güvenliğini sağlamak ve geliştirmek</li>
-    </ul>
-    <p>Verilerinizi <strong>reklam amacıyla satmıyoruz</strong> ve üçüncü taraflara pazarlanmak üzere kiralamıyoruz.</p>
-
-    <h2>3. Üçüncü Taraf Servisler</h2>
-    <p>Hizmet, aşağıdaki üçüncü taraf platformların API'leriyle entegre çalışır. Bu platformlara ait
-      verilerin işlenmesi, ilgili platformun kendi gizlilik politikasına da tabidir:</p>
-    <table>
-      <thead><tr><th>Servis</th><th>Amaç</th><th>Gizlilik Politikası</th></tr></thead>
-      <tbody>
-        <tr>
-          <td>Meta Platforms (Facebook &amp; Instagram)</td>
-          <td>Hesap bağlama, gönderi yayınlama, analitik, reklam (öne çıkarma)</td>
-          <td><a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">facebook.com/privacy/policy</a></td>
-        </tr>
-        <tr>
-          <td>Google</td>
-          <td>Google ile giriş ve yapay zekâ içerik üretimi (Gemini)</td>
-          <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td>
-        </tr>
-        <tr>
-          <td>X (Twitter)</td>
-          <td>Hesap bağlama, gönderi paylaşma, analitik</td>
-          <td><a href="https://x.com/en/privacy" target="_blank" rel="noopener">x.com/en/privacy</a></td>
-        </tr>
-        <tr>
-          <td>LinkedIn</td>
-          <td>Hesap bağlama ve gönderi paylaşma</td>
-          <td><a href="https://www.linkedin.com/legal/privacy-policy" target="_blank" rel="noopener">linkedin.com/legal/privacy-policy</a></td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h2>4. Veri Saklama ve Güvenlik</h2>
-    <ul>
-      <li>Erişim belirteçleri şifrelenmiş olarak saklanır; aktarım sırasında HTTPS kullanılır.</li>
-      <li>Verileriniz, hesabınız aktif olduğu sürece veya yasal yükümlülükler gerektirdiği süre boyunca saklanır.</li>
-      <li>Bir sosyal medya hesabının bağlantısını kaldırdığınızda, o hesaba ait erişim belirteçleri sistemimizden silinir.</li>
-    </ul>
-
-    <h2>5. Haklarınız (KVKK / GDPR)</h2>
-    <p>İşlenen verilerinize ilişkin olarak; verilerinize erişme, düzeltilmesini veya silinmesini isteme,
-      işlemeye itiraz etme ve verilerinizi taşınabilir biçimde alma haklarına sahipsiniz. Taleplerinizi
-      aşağıdaki iletişim adresine iletebilirsiniz.</p>
-
-    <h2 id="data-deletion">6. Verilerinizin Silinmesi (Data Deletion)</h2>
-    <p>Hesabınızı ve ilişkili tüm kişisel verilerinizi (bağlı sosyal medya erişim belirteçleri dâhil)
-      silmek için iki yol vardır:</p>
-    <ul>
-      <li><strong>Uygulama içinden:</strong> İlgili sosyal medya hesabının bağlantısını “Hesap Bağla”
-        ekranından kaldırın; o hesaba ait erişim belirteçleri anında silinir.</li>
-      <li><strong>Tam silme talebi:</strong> Tüm hesabınızın ve verilerinizin kalıcı olarak silinmesini
-        istiyorsanız <a href="mailto:yazilim@kobizon.com.tr">yazilim@kobizon.com.tr</a> adresine
-        “Veri Silme Talebi” konulu bir e-posta gönderin. Talebiniz en geç <strong>30 gün</strong>
-        içinde sonuçlandırılır ve onay e-postası gönderilir.</li>
-    </ul>
-
-    <h2>7. Çerezler</h2>
-    <p>Hizmet, oturumunuzu sürdürmek ve kimlik doğrulamak için gerekli (zorunlu) çerezleri kullanır.</p>
-
-    <h2>8. Çocukların Gizliliği</h2>
-    <p>Hizmet 18 yaşından küçüklere yönelik değildir ve bilerek bu yaş altından veri toplamaz.</p>
-
-    <h2>9. Değişiklikler</h2>
-    <p>Bu politikayı zaman zaman güncelleyebiliriz. Güncel sürüm bu sayfada yayımlanır ve “Son güncelleme”
-      tarihi değiştirilir.</p>
-
-    <footer>
-      <h2>10. İletişim</h2>
       <p>
-        <strong>Kobizon</strong><br />
-        E-posta: <a href="mailto:yazilim@kobizon.com.tr">yazilim@kobizon.com.tr</a>
+        Bu Gizlilik Politikası, <strong>Kobizon</strong> (“biz”, “Şirket”) tarafından işletilen
+        <strong>SosyalNet</strong> uygulaması ve web sitesi (“Hizmet”) aracılığıyla işlenen kişisel
+        verilerin nasıl toplandığını, kullanıldığını, saklandığını, paylaşıldığını ve silindiğini açıklar.
       </p>
-      <p class="muted">© 2026 Kobizon — SocialNet. Tüm hakları saklıdır.</p>
-    </footer>
+
+      <h2>1. Topladığımız Veriler</h2>
+
+      <h3>1.1 Hesap Bilgileri</h3>
+      <ul>
+        <li>Ad, e-posta adresi ve şifrenizin tek yönlü özeti (şifrenin kendisi saklanmaz)</li>
+        <li>E-posta ile gönderilen tek kullanımlık giriş kodlarının kayıtları</li>
+        <li>Kurum / müşteri bilgileri (kurum adı, logo, iletişim bilgileri)</li>
+      </ul>
+
+      <h3>1.2 Bağlı Sosyal Medya Hesapları</h3>
+      <p>
+        Hizmet; Facebook Sayfalarını, Instagram işletme/içerik üreticisi hesaplarını, X ve LinkedIn
+        hesaplarını bağlamanıza olanak tanır. Bağlantı, ilgili platformun yetkilendirme (OAuth) ekranında
+        <strong>sizin verdiğiniz izinlerle</strong> kurulur. Bu sırada şunlar işlenir:
+      </p>
+      <ul>
+        <li>Hesap adı, kullanıcı adı, kimliği (ID) ve profil fotoğrafı</li>
+        <li>Sizin adınıza işlem yapmak için verilen <strong>erişim belirteçleri (access token)</strong></li>
+        <li>Hesaplarınızdaki gönderiler, hikayeler ve bunların performans metrikleri (erişim, etkileşim, takipçi, takipçi demografisi)</li>
+        <li>Reklam hesaplarınızın adı/kimliği ve öne çıkarma (reklam) sonuçları</li>
+      </ul>
+
+      <h3>1.3 Mesajlar, Yorumlar ve Bahsedilmeler (Gelen Kutusu)</h3>
+      <p>
+        Gelen Kutusu özelliğini kullandığınızda, bağladığınız Instagram hesabına ve Facebook Sayfasına
+        (Messenger) gelen <strong>doğrudan mesajlar</strong> ile gönderilerinize yapılan
+        <strong>yorumlar</strong> ve hesabınızdan <strong>bahsedilen</strong> içerikler, Meta'nın
+        webhook bildirimleri ve API'si aracılığıyla Hizmet'e iletilir. Bu kapsamda şunlar işlenir:
+      </p>
+      <ul>
+        <li>Size yazan kişinin platformdaki kimliği, adı, kullanıcı adı ve profil fotoğrafı</li>
+        <li>Mesaj metinleri, tepkiler, düzenlenen/geri alınan mesaj bilgisi ve mesaj ekleri (fotoğraf, video, ses).
+          Platformların ek adresleri kısa ömürlü olduğundan ekler <strong>kendi depolama alanımıza kopyalanır</strong>.</li>
+        <li>Hesabı ilk bağladığınızda, yanıt verebilmeniz için mevcut konuşmaların yakın geçmişi</li>
+        <li>Yorum ve bahsedilme metinleri, yazanın kullanıcı adı ve ilgili gönderi</li>
+        <li>Sizin ve ekibinizin Hizmet üzerinden gönderdiği yanıtlar, hazır yanıt şablonlarınız ve
+          otomatik karşılama mesajı ayarlarınız</li>
+      </ul>
+      <div class="note">
+        Mesaj ve yorum verileri <strong>yalnızca</strong> size ve kurumunuzda yetki verdiğiniz ekip
+        üyelerine gösterilir; yalnızca bu yazışmaları yönetmeniz (okuma, yanıtlama, gizleme, silme)
+        için kullanılır. Reklam, profilleme veya yapay zeka modeli eğitimi için <strong>kullanılmaz</strong>
+        ve satılmaz.
+      </div>
+
+      <h3>1.4 İçerik ve Yapay Zeka Verileri</h3>
+      <ul>
+        <li>Oluşturduğunuz gönderi metinleri, görseller, videolar, hashtag'ler ve içerik kütüphanesi dosyaları</li>
+        <li>Yapay zeka ile üretmeyi seçtiğiniz içeriklerin istemleri (prompt) ve çıktıları</li>
+        <li>Bir konuşmada “yapay zeka ile yanıt öner” seçeneğini kullandığınızda, o konuşmanın son mesajları</li>
+      </ul>
+
+      <h3>1.5 Rakip ve İlham Takibi</h3>
+      <p>
+        İzlemeyi seçtiğiniz <strong>herkese açık</strong> Instagram işletme/içerik üreticisi hesaplarının
+        herkese açık profil bilgileri ve son gönderileri (Instagram Business Discovery ile) alınır ve
+        size rapor sunmak için arşivlenir. Kişisel (işletme olmayan) hesaplardan veri alınmaz.
+      </p>
+
+      <h3>1.6 Teknik Veriler</h3>
+      <ul>
+        <li>Oturum ve cihaz bilgileri (tarayıcı, işletim sistemi), IP adresi, giriş geçmişi</li>
+        <li>Güvenlik ve denetim kayıtları (kim, ne zaman, hangi işlemi yaptı)</li>
+      </ul>
+
+      <h2>2. Verileri Nasıl Kullanıyoruz</h2>
+      <ul>
+        <li>Hesabınızı oluşturmak, kimliğinizi doğrulamak ve oturumunuzu güvenli tutmak</li>
+        <li>Bağladığınız hesaplara gönderi ve hikaye yayınlamak ve zamanlamak</li>
+        <li>Analitik verilerini getirip ekranda ve raporlarda (PDF) sunmak</li>
+        <li>Talebiniz üzerine yayınlanmış gönderileri öne çıkarmak (reklam) ve reklam sonuçlarını göstermek</li>
+        <li>Mesajlarınızı ve yorumlarınızı tek ekranda göstermek, sizin yazdığınız yanıtları platforma iletmek</li>
+        <li>Açtıysanız, size ilk kez yazan kişilere sizin belirlediğiniz <strong>otomatik karşılama mesajını</strong>
+          (Meta'nın 24 saatlik mesajlaşma kurallarına uygun olarak) göndermek</li>
+        <li>Yeni mesaj, yorum ve bahsedilmeler için size uygulama içi bildirim göstermek</li>
+        <li>Hizmeti işletmek, güvenliğini sağlamak, hataları gidermek ve kullanım maliyetini hesaplamak</li>
+      </ul>
+      <p>Verilerinizi <strong>satmıyoruz</strong>, kiralamıyoruz ve reklam amacıyla üçüncü taraflarla paylaşmıyoruz.
+        Hizmet, sizin açıkça istediğiniz işlemler dışında sizin adınıza içerik yayınlamaz veya mesaj göndermez.</p>
+
+      <h2>3. Meta (Facebook &amp; Instagram) İzinleri</h2>
+      <p>Hizmet'in istediği Meta izinleri ve her birinin kullanım amacı:</p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>İzin</th><th>Kullanım amacı</th></tr></thead>
+          <tbody>
+            <tr><td><code>public_profile</code>, <code>pages_show_list</code>, <code>business_management</code></td><td>Bağlanan kişiyi ve yönettiği Sayfaları/işletme varlıklarını listeleyip seçtirmek</td></tr>
+            <tr><td><code>pages_read_engagement</code>, <code>read_insights</code></td><td>Sayfa gönderilerini ve Sayfa analitiğini okumak</td></tr>
+            <tr><td><code>pages_manage_posts</code></td><td>Sayfaya sizin oluşturduğunuz gönderileri yayınlamak</td></tr>
+            <tr><td><code>instagram_basic</code>, <code>instagram_business_basic</code></td><td>Instagram hesap profilini ve gönderilerini okumak; izlediğiniz herkese açık işletme hesaplarını görüntülemek</td></tr>
+            <tr><td><code>instagram_content_publish</code>, <code>instagram_business_content_publish</code></td><td>Instagram'a gönderi, karusel, video ve hikaye yayınlamak</td></tr>
+            <tr><td><code>instagram_manage_insights</code>, <code>instagram_business_manage_insights</code></td><td>Instagram hesap ve gönderi analitiği ile takipçi demografisini okumak</td></tr>
+            <tr><td><code>instagram_manage_messages</code></td><td>Instagram doğrudan mesajlarını Gelen Kutusu'nda göstermek ve sizin yazdığınız yanıtları göndermek</td></tr>
+            <tr><td><code>pages_messaging</code></td><td>Sayfanızın Messenger mesajlarını göstermek, yanıtlamak ve mesaj bildirimlerine abone olmak</td></tr>
+            <tr><td><code>pages_manage_metadata</code></td><td>Yeni mesaj ve yorumların anında iletilmesi için Sayfayı uygulamanın webhook'larına abone etmek</td></tr>
+            <tr><td><code>instagram_manage_comments</code></td><td>Instagram gönderilerinize yapılan yorumları ve bahsedilmeleri göstermek; sizin isteğinizle yanıtlamak, gizlemek veya silmek</td></tr>
+            <tr><td><code>ads_management</code>, <code>ads_read</code></td><td>Sizin reklam hesabınızda, sizin başlattığınız öne çıkarma (reklam) kampanyalarını oluşturmak ve sonuçlarını göstermek</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>4. Üçüncü Taraf Hizmet Sağlayıcılar</h2>
+      <p>Hizmet aşağıdaki sağlayıcılarla çalışır. Bu sağlayıcılara yalnızca ilgili işlev için gereken veri iletilir
+        ve veriler ilgili sağlayıcının gizlilik politikasına da tabidir:</p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Sağlayıcı</th><th>Amaç / iletilen veri</th><th>Gizlilik Politikası</th></tr></thead>
+          <tbody>
+            <tr><td>Meta Platforms (Facebook, Instagram, Messenger)</td><td>Hesap bağlama, yayın, analitik, reklam, mesaj ve yorum yönetimi</td><td><a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">facebook.com/privacy/policy</a></td></tr>
+            <tr><td>Google (Gemini API)</td><td>Yapay zeka ile metin üretimi ve istediğinizde mesaj yanıtı önerisi — istem metni ve ilgili konuşmanın son mesajları iletilir</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td></tr>
+            <tr><td>OpenRouter</td><td>Yapay zeka ile görsel üretimi — yalnızca görsel istemi iletilir</td><td><a href="https://openrouter.ai/privacy" target="_blank" rel="noopener">openrouter.ai/privacy</a></td></tr>
+            <tr><td>X (Twitter)</td><td>Hesap bağlama, gönderi paylaşma, analitik</td><td><a href="https://x.com/en/privacy" target="_blank" rel="noopener">x.com/en/privacy</a></td></tr>
+            <tr><td>LinkedIn</td><td>Hesap bağlama ve gönderi paylaşma</td><td><a href="https://www.linkedin.com/legal/privacy-policy" target="_blank" rel="noopener">linkedin.com/legal/privacy-policy</a></td></tr>
+            <tr><td>Canva</td><td>Bağlamayı seçerseniz, görselleri Canva'da düzenlemek</td><td><a href="https://www.canva.com/policies/privacy-policy/" target="_blank" rel="noopener">canva.com/policies/privacy-policy</a></td></tr>
+            <tr><td>Hostinger</td><td>Giriş kodu, şifre sıfırlama ve bildirim e-postalarının gönderimi</td><td><a href="https://www.hostinger.com/legal/privacy-policy" target="_blank" rel="noopener">hostinger.com/legal/privacy-policy</a></td></tr>
+            <tr><td>Cloudflare</td><td>Güvenli bağlantı (HTTPS) ve ağ koruması</td><td><a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">cloudflare.com/privacypolicy</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>5. Veri Saklama ve Güvenlik</h2>
+      <ul>
+        <li>Erişim belirteçleri veritabanında <strong>AES-256-GCM</strong> ile şifrelenerek saklanır; tüm iletişim HTTPS ile yapılır.</li>
+        <li>Veriler kendi sunucularımızda tutulur; erişim yalnızca yetkili personelle sınırlıdır.</li>
+        <li>Gönderiler, analitik, mesajlar, yorumlar ve dosyalar; ilgili kurum/müşteri veya hesabınız silinene kadar saklanır.</li>
+        <li>Uygulama içi bildirimler 30 gün, giriş geçmişi yaklaşık 13 ay, güvenlik denetim kayıtları 2 yıl sonra otomatik silinir.</li>
+        <li>Bir sosyal medya hesabının bağlantısını kaldırdığınızda o hesabın erişim belirteçleri anında silinir ve
+          hesaptan yeni veri alınmaz.</li>
+      </ul>
+
+      <h2>6. Haklarınız (KVKK / GDPR)</h2>
+      <p>Verilerinize erişme, düzeltilmesini veya silinmesini isteme, işlemeye itiraz etme ve verilerinizi taşınabilir
+        biçimde alma haklarına sahipsiniz. Size mesaj gönderen veya yorum yapan kişiler de, kendileriyle ilgili veriler
+        için bu haklarını bize veya ilgili işletmeye başvurarak kullanabilir. Talepler için aşağıdaki iletişim adresini kullanın.</p>
+
+      <h2 id="data-deletion">7. Verilerinizin Silinmesi</h2>
+      <ul>
+        <li><strong>Bir hesabın bağlantısını kaldırma:</strong> <em>Hesap Bağla</em> ekranında “Bağlantıyı kaldır” — erişim belirteçleri anında silinir.</li>
+        <li><strong>Bir kurum/müşterinin tüm verisini silme:</strong> <em>Kurum / Müşteri</em> ekranında “Sil” — o müşterinin bağlı hesapları,
+          gönderileri, analitiği, mesajları, mesaj ekleri, yorumları ve dosyaları kalıcı olarak silinir.</li>
+        <li><strong>Tüm hesabınızı silme:</strong> <a href="mailto:yazilim@kobizon.com.tr?subject=Veri%20Silme%20Talebi">yazilim@kobizon.com.tr</a>
+          adresine “Veri Silme Talebi” konulu e-posta gönderin; en geç <strong>30 gün</strong> içinde tüm verileriniz silinir ve size onay e-postası gönderilir.</li>
+      </ul>
+      <p>Ayrıntılı adımlar: <a href="data-deletion.html">Kullanıcı Verisi Silme Talimatları</a>.</p>
+
+      <h2>8. Çerezler ve Yerel Depolama</h2>
+      <p>Hizmet yalnızca oturumunuzu sürdürmek için gerekli (zorunlu) çerezleri ve dil tercihiniz gibi ayarlar için
+        tarayıcının yerel depolamasını kullanır. Reklam veya izleme çerezi kullanılmaz.</p>
+
+      <h2>9. Çocukların Gizliliği</h2>
+      <p>Hizmet 18 yaşından küçüklere yönelik değildir ve bilerek bu yaş altından veri toplamaz.</p>
+
+      <h2>10. Değişiklikler</h2>
+      <p>Bu politikayı zaman zaman güncelleyebiliriz. Güncel sürüm bu sayfada yayımlanır ve “Son güncelleme” tarihi değiştirilir.</p>
+
+      <footer>
+        <h2>11. İletişim</h2>
+        <p><strong>Kobizon</strong><br />E-posta: <a href="mailto:yazilim@kobizon.com.tr">yazilim@kobizon.com.tr</a></p>
+        <p class="muted">© 2026 Kobizon — SosyalNet. Tüm hakları saklıdır.</p>
+      </footer>
+    </section>
+
+    <!-- ============================== ENGLISH ============================== -->
+    <section lang="en">
+      <header>
+        <h1>Privacy Policy</h1>
+        <p class="muted">SosyalNet — Social Media Management Platform</p>
+        <p class="muted">Last updated: September 30, 2026</p>
+      </header>
+
+      <p>
+        This Privacy Policy explains how personal data is collected, used, stored, shared and deleted through the
+        <strong>SosyalNet</strong> application and website (the “Service”), operated by <strong>Kobizon</strong>
+        (“we”, “us”, the “Company”).
+      </p>
+
+      <h2>1. Data We Collect</h2>
+
+      <h3>1.1 Account Information</h3>
+      <ul>
+        <li>Name, email address and a one-way hash of your password (the password itself is never stored)</li>
+        <li>Records of one-time sign-in codes sent by email</li>
+        <li>Organization / client details (organization name, logo, contact details)</li>
+      </ul>
+
+      <h3>1.2 Connected Social Media Accounts</h3>
+      <p>
+        The Service lets you connect Facebook Pages, Instagram business/creator accounts, X and LinkedIn accounts.
+        Each connection is made on the platform's own authorization (OAuth) screen, <strong>with the permissions you grant</strong>.
+        We process:
+      </p>
+      <ul>
+        <li>Account name, username, ID and profile picture</li>
+        <li>The <strong>access tokens</strong> issued to act on your behalf</li>
+        <li>Posts and stories on your accounts and their performance metrics (reach, engagement, followers, follower demographics)</li>
+        <li>Names/IDs of your ad accounts and the results of boosted posts (ads)</li>
+      </ul>
+
+      <h3>1.3 Messages, Comments and Mentions (Inbox)</h3>
+      <p>
+        When you use the Inbox feature, <strong>direct messages</strong> sent to your connected Instagram account and
+        Facebook Page (Messenger), <strong>comments</strong> on your posts and content that <strong>mentions</strong>
+        your account are delivered to the Service through Meta's webhooks and API. We process:
+      </p>
+      <ul>
+        <li>The sender's platform ID, name, username and profile picture</li>
+        <li>Message text, reactions, edit/unsend status and attachments (photos, videos, audio). Because platform
+          attachment links expire quickly, attachments are <strong>copied to our own storage</strong>.</li>
+        <li>When you first connect an account, the recent history of existing conversations so you can reply to them</li>
+        <li>Comment and mention text, the author's username and the related post</li>
+        <li>Replies sent by you and your team through the Service, your saved reply templates and your automatic greeting settings</li>
+      </ul>
+      <div class="note">
+        Message and comment data is shown <strong>only</strong> to you and the team members you authorize in your
+        organization, and is used <strong>only</strong> to let you manage those conversations (read, reply, hide, delete).
+        It is <strong>not</strong> used for advertising, profiling or training artificial intelligence models, and it is never sold.
+      </div>
+
+      <h3>1.4 Content and Artificial Intelligence Data</h3>
+      <ul>
+        <li>Post text, images, videos, hashtags and files in your content library</li>
+        <li>Prompts and outputs of content you choose to generate with artificial intelligence</li>
+        <li>When you use “suggest a reply with artificial intelligence” in a conversation, the recent messages of that conversation</li>
+      </ul>
+
+      <h3>1.5 Competitor and Inspiration Tracking</h3>
+      <p>
+        For <strong>public</strong> Instagram business/creator accounts you choose to follow, we retrieve their public profile
+        information and recent posts (via Instagram Business Discovery) and archive them to provide reports to you.
+        No data is retrieved from personal (non-business) accounts.
+      </p>
+
+      <h3>1.6 Technical Data</h3>
+      <ul>
+        <li>Session and device information (browser, operating system), IP address, sign-in history</li>
+        <li>Security and audit logs (who performed which action and when)</li>
+      </ul>
+
+      <h2>2. How We Use Data</h2>
+      <ul>
+        <li>To create your account, verify your identity and keep your session secure</li>
+        <li>To publish and schedule posts and stories to the accounts you connect</li>
+        <li>To retrieve analytics and present them on screen and in PDF reports</li>
+        <li>At your request, to boost published posts (ads) and show ad results</li>
+        <li>To show your messages and comments in one place and deliver the replies you write to the platform</li>
+        <li>If you enable it, to send the <strong>automatic greeting</strong> you define to people who message you for the first time
+          (within Meta's 24-hour messaging window rules)</li>
+        <li>To show in-app notifications for new messages, comments and mentions</li>
+        <li>To operate, secure and troubleshoot the Service and calculate usage costs</li>
+      </ul>
+      <p>We do <strong>not sell</strong> or rent your data and do not share it with third parties for advertising. The Service
+        never publishes content or sends messages on your behalf except for actions you explicitly request or enable.</p>
+
+      <h2>3. Meta (Facebook &amp; Instagram) Permissions</h2>
+      <p>The Meta permissions requested by the Service and why each is used:</p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Permission</th><th>Purpose</th></tr></thead>
+          <tbody>
+            <tr><td><code>public_profile</code>, <code>pages_show_list</code>, <code>business_management</code></td><td>Identify the connecting person and list the Pages/business assets they manage so they can choose which to connect</td></tr>
+            <tr><td><code>pages_read_engagement</code>, <code>read_insights</code></td><td>Read Page posts and Page analytics</td></tr>
+            <tr><td><code>pages_manage_posts</code></td><td>Publish posts you create to your Page</td></tr>
+            <tr><td><code>instagram_basic</code>, <code>instagram_business_basic</code></td><td>Read your Instagram profile and posts; view public business accounts you choose to follow</td></tr>
+            <tr><td><code>instagram_content_publish</code>, <code>instagram_business_content_publish</code></td><td>Publish posts, carousels, videos and stories to Instagram</td></tr>
+            <tr><td><code>instagram_manage_insights</code>, <code>instagram_business_manage_insights</code></td><td>Read Instagram account and post analytics and follower demographics</td></tr>
+            <tr><td><code>instagram_manage_messages</code></td><td>Show Instagram direct messages in the Inbox and send the replies you write</td></tr>
+            <tr><td><code>pages_messaging</code></td><td>Show and reply to your Page's Messenger messages and subscribe to message notifications</td></tr>
+            <tr><td><code>pages_manage_metadata</code></td><td>Subscribe your Page to the app's webhooks so new messages and comments arrive in real time</td></tr>
+            <tr><td><code>instagram_manage_comments</code></td><td>Show comments on your Instagram posts and mentions of your account; reply to, hide or delete them at your request</td></tr>
+            <tr><td><code>ads_management</code>, <code>ads_read</code></td><td>Create boost (ad) campaigns that you start, in your own ad account, and show their results</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>4. Third-Party Service Providers</h2>
+      <p>The Service works with the providers below. Each receives only the data needed for its function, and data is also
+        subject to that provider's privacy policy:</p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Provider</th><th>Purpose / data shared</th><th>Privacy Policy</th></tr></thead>
+          <tbody>
+            <tr><td>Meta Platforms (Facebook, Instagram, Messenger)</td><td>Account connection, publishing, analytics, ads, message and comment management</td><td><a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">facebook.com/privacy/policy</a></td></tr>
+            <tr><td>Google (Gemini API)</td><td>Text generation with artificial intelligence and, when you ask, reply suggestions — the prompt and the recent messages of that conversation are sent</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td></tr>
+            <tr><td>OpenRouter</td><td>Image generation with artificial intelligence — only the image prompt is sent</td><td><a href="https://openrouter.ai/privacy" target="_blank" rel="noopener">openrouter.ai/privacy</a></td></tr>
+            <tr><td>X (Twitter)</td><td>Account connection, publishing, analytics</td><td><a href="https://x.com/en/privacy" target="_blank" rel="noopener">x.com/en/privacy</a></td></tr>
+            <tr><td>LinkedIn</td><td>Account connection and publishing</td><td><a href="https://www.linkedin.com/legal/privacy-policy" target="_blank" rel="noopener">linkedin.com/legal/privacy-policy</a></td></tr>
+            <tr><td>Canva</td><td>If you connect it, editing images in Canva</td><td><a href="https://www.canva.com/policies/privacy-policy/" target="_blank" rel="noopener">canva.com/policies/privacy-policy</a></td></tr>
+            <tr><td>Hostinger</td><td>Sending sign-in code, password reset and notification emails</td><td><a href="https://www.hostinger.com/legal/privacy-policy" target="_blank" rel="noopener">hostinger.com/legal/privacy-policy</a></td></tr>
+            <tr><td>Cloudflare</td><td>Secure connection (HTTPS) and network protection</td><td><a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">cloudflare.com/privacypolicy</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>5. Data Retention and Security</h2>
+      <ul>
+        <li>Access tokens are stored encrypted with <strong>AES-256-GCM</strong>; all traffic uses HTTPS.</li>
+        <li>Data is kept on our own servers; access is limited to authorized personnel.</li>
+        <li>Posts, analytics, messages, comments and files are kept until the related organization/client or your account is deleted.</li>
+        <li>In-app notifications are deleted automatically after 30 days, sign-in history after about 13 months and security audit logs after 2 years.</li>
+        <li>When you disconnect a social media account, its access tokens are deleted immediately and no further data is retrieved from it.</li>
+      </ul>
+
+      <h2>6. Your Rights (GDPR / KVKK)</h2>
+      <p>You have the right to access your data, request its correction or deletion, object to processing and receive your data
+        in a portable format. People who message or comment on your accounts may also exercise these rights regarding their data
+        by contacting us or the business concerned. Use the contact address below for requests.</p>
+
+      <h2 id="data-deletion-en">7. Deleting Your Data</h2>
+      <ul>
+        <li><strong>Disconnect an account:</strong> on the <em>Connect Account</em> screen choose “Remove connection” — its access tokens are deleted immediately.</li>
+        <li><strong>Delete all data of an organization/client:</strong> on the <em>Clients / Workspaces</em> screen choose “Delete” — that client's connected
+          accounts, posts, analytics, messages, message attachments, comments and files are permanently deleted.</li>
+        <li><strong>Delete your whole account:</strong> email <a href="mailto:yazilim@kobizon.com.tr?subject=Data%20Deletion%20Request">yazilim@kobizon.com.tr</a>
+          with the subject “Data Deletion Request”; all your data is deleted within <strong>30 days</strong> and you receive a confirmation email.</li>
+      </ul>
+      <p>Step-by-step instructions: <a href="data-deletion.html?lang=en">User Data Deletion Instructions</a>.</p>
+
+      <h2>8. Cookies and Local Storage</h2>
+      <p>The Service uses only strictly necessary cookies to keep you signed in, and browser local storage for settings such as your
+        language preference. No advertising or tracking cookies are used.</p>
+
+      <h2>9. Children's Privacy</h2>
+      <p>The Service is not intended for anyone under 18 and does not knowingly collect data from them.</p>
+
+      <h2>10. Changes</h2>
+      <p>We may update this policy from time to time. The current version is published on this page with an updated “Last updated” date.</p>
+
+      <footer>
+        <h2>11. Contact</h2>
+        <p><strong>Kobizon</strong><br />Email: <a href="mailto:yazilim@kobizon.com.tr">yazilim@kobizon.com.tr</a></p>
+        <p class="muted">© 2026 Kobizon — SosyalNet. All rights reserved.</p>
+      </footer>
+    </section>
   </div>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var buttons = document.querySelectorAll('.lang-switch button');
+      function apply(lang) {
+        root.className = 'lang-' + lang;
+        root.lang = lang;
+        for (var i = 0; i < buttons.length; i++) {
+          buttons[i].setAttribute('aria-pressed', String(buttons[i].getAttribute('data-lang') === lang));
+        }
+      }
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', function () {
+          var lang = this.getAttribute('data-lang');
+          apply(lang);
+          try { history.replaceState(null, '', '?lang=' + lang); } catch (e) { /* yok say */ }
+        });
+      }
+      apply(root.className === 'lang-en' ? 'en' : 'tr');
+    })();
+  </script>
 </body>
 </html>
