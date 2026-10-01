@@ -60,7 +60,7 @@
       <header>
         <h1>Gizlilik Politikası</h1>
         <p class="muted">SosyalNet — Sosyal Medya Yönetim Platformu</p>
-        <p class="muted">Son güncelleme: 30 Eylül 2026</p>
+        <p class="muted">Son güncelleme: 1 Ekim 2026</p>
       </header>
 
       <p>
@@ -80,7 +80,7 @@
 
       <h3>1.2 Bağlı Sosyal Medya Hesapları</h3>
       <p>
-        Hizmet; Facebook Sayfalarını, Instagram işletme/içerik üreticisi hesaplarını, X ve LinkedIn
+        Hizmet; Facebook Sayfalarını, Instagram işletme/içerik üreticisi hesaplarını, Threads, X ve LinkedIn
         hesaplarını bağlamanıza olanak tanır. Bağlantı, ilgili platformun yetkilendirme (OAuth) ekranında
         <strong>sizin verdiğiniz izinlerle</strong> kurulur. Bu sırada şunlar işlenir:
       </p>
@@ -96,7 +96,9 @@
         Gelen Kutusu özelliğini kullandığınızda, bağladığınız Instagram hesabına ve Facebook Sayfasına
         (Messenger) gelen <strong>doğrudan mesajlar</strong> ile gönderilerinize yapılan
         <strong>yorumlar</strong> ve hesabınızdan <strong>bahsedilen</strong> içerikler, Meta'nın
-        webhook bildirimleri ve API'si aracılığıyla Hizmet'e iletilir. Bu kapsamda şunlar işlenir:
+        webhook bildirimleri ve API'si aracılığıyla Hizmet'e iletilir. Bağladığınız Threads hesabının
+        gönderilerine gelen <strong>yanıtlar</strong> ve hesabınızdan bahsedilen herkese açık Threads gönderileri
+        de düzenli aralıklarla Threads API'sinden alınır. Bu kapsamda şunlar işlenir:
       </p>
       <ul>
         <li>Size yazan kişinin platformdaki kimliği, adı, kullanıcı adı ve profil fotoğrafı</li>
@@ -175,6 +177,11 @@
             <tr><td><code>pages_manage_metadata</code></td><td>Yeni mesaj ve yorumların anında iletilmesi için Sayfayı uygulamanın webhook'larına abone etmek</td></tr>
             <tr><td><code>instagram_manage_comments</code>, <code>instagram_business_manage_comments</code></td><td>Instagram gönderilerinize yapılan yorumları ve bahsedilmeleri göstermek; sizin isteğinizle yanıtlamak, gizlemek veya silmek</td></tr>
             <tr><td>Instagram Public Content Access</td><td>İlham sayfasında bir hashtag'in herkese açık popüler ve son gönderilerini aramak ve beğenilenleri favorilere eklemek</td></tr>
+            <tr><td><code>threads_basic</code></td><td>Threads hesabınızın profilini (ad, kullanıcı adı, fotoğraf) okumak</td></tr>
+            <tr><td><code>threads_content_publish</code></td><td>Threads'e sizin oluşturduğunuz metin, görsel, video ve karusel gönderileri yayınlamak</td></tr>
+            <tr><td><code>threads_manage_insights</code></td><td>Threads hesap ve gönderi istatistiklerini (görüntülenme, beğeni, yanıt, repost) okumak</td></tr>
+            <tr><td><code>threads_read_replies</code>, <code>threads_manage_replies</code></td><td>Threads gönderilerinize gelen yanıtları göstermek; sizin isteğinizle yanıtlamak veya gizlemek</td></tr>
+            <tr><td><code>threads_manage_mentions</code></td><td>Hesabınızdan bahsedilen herkese açık Threads gönderilerini göstermek ve yanıtlamanızı sağlamak</td></tr>
             <tr><td><code>ads_management</code>, <code>ads_read</code></td><td>Sizin reklam hesabınızda, sizin başlattığınız öne çıkarma (reklam) kampanyalarını oluşturmak ve sonuçlarını göstermek</td></tr>
           </tbody>
         </table>
@@ -187,7 +194,7 @@
         <table>
           <thead><tr><th>Sağlayıcı</th><th>Amaç / iletilen veri</th><th>Gizlilik Politikası</th></tr></thead>
           <tbody>
-            <tr><td>Meta Platforms (Facebook, Instagram, Messenger)</td><td>Hesap bağlama, yayın, analitik, reklam, mesaj ve yorum yönetimi</td><td><a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">facebook.com/privacy/policy</a></td></tr>
+            <tr><td>Meta Platforms (Facebook, Instagram, Messenger, Threads)</td><td>Hesap bağlama, yayın, analitik, reklam, mesaj, yorum ve yanıt yönetimi</td><td><a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">facebook.com/privacy/policy</a></td></tr>
             <tr><td>Google (Gemini API)</td><td>Yapay zeka ile metin üretimi ve istediğinizde mesaj yanıtı önerisi — istem metni ve ilgili konuşmanın son mesajları iletilir</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td></tr>
             <tr><td>OpenRouter</td><td>Yapay zeka ile görsel üretimi — yalnızca görsel istemi iletilir</td><td><a href="https://openrouter.ai/privacy" target="_blank" rel="noopener">openrouter.ai/privacy</a></td></tr>
             <tr><td>X (Twitter)</td><td>Hesap bağlama, gönderi paylaşma, analitik</td><td><a href="https://x.com/en/privacy" target="_blank" rel="noopener">x.com/en/privacy</a></td></tr>
@@ -246,7 +253,7 @@
       <header>
         <h1>Privacy Policy</h1>
         <p class="muted">SosyalNet — Social Media Management Platform</p>
-        <p class="muted">Last updated: September 30, 2026</p>
+        <p class="muted">Last updated: October 1, 2026</p>
       </header>
 
       <p>
@@ -266,7 +273,7 @@
 
       <h3>1.2 Connected Social Media Accounts</h3>
       <p>
-        The Service lets you connect Facebook Pages, Instagram business/creator accounts, X and LinkedIn accounts.
+        The Service lets you connect Facebook Pages, Instagram business/creator accounts, Threads, X and LinkedIn accounts.
         Each connection is made on the platform's own authorization (OAuth) screen, <strong>with the permissions you grant</strong>.
         We process:
       </p>
@@ -281,7 +288,8 @@
       <p>
         When you use the Inbox feature, <strong>direct messages</strong> sent to your connected Instagram account and
         Facebook Page (Messenger), <strong>comments</strong> on your posts and content that <strong>mentions</strong>
-        your account are delivered to the Service through Meta's webhooks and API. We process:
+        your account are delivered to the Service through Meta's webhooks and API. <strong>Replies</strong> to your connected
+        Threads account's posts and public Threads posts that mention you are also retrieved periodically from the Threads API. We process:
       </p>
       <ul>
         <li>The sender's platform ID, name, username and profile picture</li>
@@ -357,6 +365,11 @@
             <tr><td><code>pages_manage_metadata</code></td><td>Subscribe your Page to the app's webhooks so new messages and comments arrive in real time</td></tr>
             <tr><td><code>instagram_manage_comments</code>, <code>instagram_business_manage_comments</code></td><td>Show comments on your Instagram posts and mentions of your account; reply to, hide or delete them at your request</td></tr>
             <tr><td>Instagram Public Content Access</td><td>Search public top and recent posts for a hashtag on the Inspiration page and save the ones you like to favorites</td></tr>
+            <tr><td><code>threads_basic</code></td><td>Read your Threads profile (name, username, picture)</td></tr>
+            <tr><td><code>threads_content_publish</code></td><td>Publish text, image, video and carousel posts you create to Threads</td></tr>
+            <tr><td><code>threads_manage_insights</code></td><td>Read Threads account and post insights (views, likes, replies, reposts)</td></tr>
+            <tr><td><code>threads_read_replies</code>, <code>threads_manage_replies</code></td><td>Show replies to your Threads posts; reply to or hide them at your request</td></tr>
+            <tr><td><code>threads_manage_mentions</code></td><td>Show public Threads posts that mention your account and let you reply</td></tr>
             <tr><td><code>ads_management</code>, <code>ads_read</code></td><td>Create boost (ad) campaigns that you start, in your own ad account, and show their results</td></tr>
           </tbody>
         </table>
@@ -369,7 +382,7 @@
         <table>
           <thead><tr><th>Provider</th><th>Purpose / data shared</th><th>Privacy Policy</th></tr></thead>
           <tbody>
-            <tr><td>Meta Platforms (Facebook, Instagram, Messenger)</td><td>Account connection, publishing, analytics, ads, message and comment management</td><td><a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">facebook.com/privacy/policy</a></td></tr>
+            <tr><td>Meta Platforms (Facebook, Instagram, Messenger, Threads)</td><td>Account connection, publishing, analytics, ads, message, comment and reply management</td><td><a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">facebook.com/privacy/policy</a></td></tr>
             <tr><td>Google (Gemini API)</td><td>Text generation with artificial intelligence and, when you ask, reply suggestions — the prompt and the recent messages of that conversation are sent</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td></tr>
             <tr><td>OpenRouter</td><td>Image generation with artificial intelligence — only the image prompt is sent</td><td><a href="https://openrouter.ai/privacy" target="_blank" rel="noopener">openrouter.ai/privacy</a></td></tr>
             <tr><td>X (Twitter)</td><td>Account connection, publishing, analytics</td><td><a href="https://x.com/en/privacy" target="_blank" rel="noopener">x.com/en/privacy</a></td></tr>
